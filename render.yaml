@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: giscus-proxy
-    env: docker
-    autoDeploy: true
-    healthCheckPath: /widget
-    plan: free

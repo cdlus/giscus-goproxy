@@ -37,4 +37,4 @@ USER nonroot:nonroot
 EXPOSE 8080
 
 # Start the binary
-ENTRYPOINT ["/giscus-wrapper"]
+ENTRYPOINT ["/giscus-proxy"]

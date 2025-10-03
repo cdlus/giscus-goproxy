@@ -18,7 +18,7 @@ COPY . .
 ARG TARGETOS
 ARG TARGETARCH
 ENV CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH:-amd64}
-RUN go build -ldflags='-s -w' -o /out/giscus-wrapper ./
+RUN go build -ldflags='-s -w' -o /out/giscus-proxy ./
 
 
 # -------- Runtime stage --------
@@ -28,7 +28,7 @@ WORKDIR /
 
 # Copy CA certs and binary
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-COPY --from=builder /out/giscus-wrapper /giscus-wrapper
+COPY --from=builder /out/giscus-proxy /giscus-proxy
 
 # Run as non-root for security
 USER nonroot:nonroot

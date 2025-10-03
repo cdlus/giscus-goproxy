@@ -11,8 +11,8 @@ import (
 	"strings"
 )
 
-const pattern = `"poweredBy": "– powered by \u003ca\u003egiscus\u003c/a\u003e"`
-const replacement = `"poweredBy": ""` // adjust as needed
+const pattern = `"poweredBy":"– powered by \u003ca\u003egiscus\u003c/a\u003e"`
+const replacement = `"poweredBy":""` // adjust as needed
 
 // streamReplaceWriter: streaming literal replace with a tiny tail buffer.
 type streamReplaceWriter struct {
